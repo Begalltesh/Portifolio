@@ -89,6 +89,4 @@ app.post('/ask', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Servidor rodando! Acesse seu site em http://localhost:${port}`);
-});
+module.exports = app;

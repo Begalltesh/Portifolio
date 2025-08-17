@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Luciano | Desenvolvedor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-principal">
+
+    <nav id="navbar-principal" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Igor Luciano</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos">Projetos</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#carreira">Carreira</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-mim">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contatos">Contatos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio">
+        <div class="container">
+            <h1 class="display-3">
+                <span id="texto-animado"></span><span class="cursor">|</span>
+            </h1>
+        </div>
+    </section>
+
+    <section id="projetos">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5">Meus Projetos</h2>
+            <p class="lead">Uma amostra dos trabalhos que desenvolvi.</p>
+        </div>
+        <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <a href="https://github.com/Begalltesh/LoginPhp" target="_blank" rel="noopener noreferrer">
+                        <img src="/image/projeto_1.png" class="d-block w-100" alt="Projeto 1">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>
+                            <a href="https://github.com/Begalltesh/LoginPhp" target="_blank" rel="noopener noreferrer">Login PHP</a>
+                        </h5>
+                        <p>Projeto de Login e Cadastro em PHP e MySQL com autenticação e layout responsivo.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="https://github.com/Begalltesh/CrudBiblioteca" target="_blank" rel="noopener noreferrer">
+                        <img src="image/projeto_2.png" class="d-block w-100" alt="Projeto 2">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>
+                            <a href="https://github.com/Begalltesh/CrudBiblioteca" target="_blank" rel="noopener noreferrer">Crud biblioteca</a>
+                        </h5>
+                        <p>Projeto em php e mysql de um crud pra armazenar, visualizar, editar e excluir livros com ferramentas de busca por filtro.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                     <a href="URL_DO_SEU_PROJETO_3" target="_blank" rel="noopener noreferrer">
+                        <img src="image/projeto_3.png" class="d-block w-100" alt="Projeto 3">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>
+                            <a href="URL_DO_SEU_PROJETO_3" target="_blank" rel="noopener noreferrer">Esse Site</a>
+                        </h5>
+                        <p>Meu portifolio de Desenvolvedor responsivo feito em html, css, JavaScript e NodeJS com ChatBot IA interativo.</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+    </section>
+
+    <section id="carreira">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5">Minha Jornada até aqui</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="lead text-center">
+                        Comecei minha carreira em tecnologia no suporte técnico, resolvendo problemas de hardware e software e entendendo de perto as necessidades dos usuários. Com o tempo, surgiu a vontade de criar soluções além de apenas consertá-las, e mergulhei no desenvolvimento de software. Trabalhei com PHP e MySQL na criação e manutenção de sistemas internos, sempre unindo a empatia do suporte com a lógica da programação para entregar soluções práticas e voltadas à experiência do usuário
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="assets/curriculo_igor.docx" class="btn btn-custom" download="curriculo_igor.docx">
+                    <i class="bi bi-download me-2"></i>
+                    Baixe meu currículo em docx
+                </a>
+            </div>
+            <div class="text-center mt-5">
+                <a href="assets/curriculo-igor.pdf" style="background: red;" class="btn btn-custom" download="curriculo-igor.pdf">
+                    <i class="bi bi-download me-2"></i>
+                    Baixe meu currículo em pdf
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <section id="sobre-mim">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5">Sobre Mim</h2>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="image/praiero.jpeg" class="img-fluid rounded-circle" alt="Foto de Igor Luciano">
+            </div>
+            <div class="col-md-8">
+                <h4>Olá! Sou Igor Luciano.</h4>
+                <p>Estudante de ciencia da computação, Gamer, Desenvolvedor, Praiero e Amigo pra todas as horas, vivendo um dia de cada vez aproveitando a vida em meio a lazeres e sem nunca me esquecer de minhas responsabilidades de Estudo e Trabalho.</p>
+                <p>Tecnologias que mais utilizo são HTML, CSS, JavaScript e PHP com MySQL, sempre buscando criar interfaces limpas e sistemas funcionais. Tenho grande interesse em desenvolvimento Full-Stack e em aprender novas tecnologias para criar soluções cada vez melhores.</p>
+            </div>
+        </div>
+        <hr class="my-5">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h3>Rolê em Eventos Geeks</h3>
+                <p>Nada melhor do que sair para os eventos geeks, encontrar a galera, rir e resenhar. Esses momentos são sempre únicos, com boas histórias e, claro, muita zoeira saudável, O que torna tudo ainda mais especial — aquelas pessoas que transformam qualquer rolê em algo memorável.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="image/evento.jpeg" class="img-fluid rounded-circle" alt="Igor em um evento de cultura geek">
+            </div>
+        </div>
+        <hr class="my-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="image/vela.jpeg" class="img-fluid rounded-circle" alt="Amigos reunidos em um momento de lazer">
+            </div>
+            <div class="col-md-8">
+                <h3>Vela nas horas Vagas</h3>
+                <p>O esquema é simples: sair com os amigos, meter uns lanches pra dentro, dar risada e jogar conversa fora. Fofoca? só se for sobre a vida dos outros.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="ia-pergunta">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5">Pergunte ao meu "Eu" Digital</h2>
+            <p class="lead">Tem alguma curiosidade sobre minha carreira, hobbies ou projetos? <br>Pergunte à minha IA treinada com minhas informações.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="input-group mb-3">
+                    <input type="text" id="pergunta-usuario" class="form-control" placeholder="Ex: Quais tecnologias você mais gosta de usar?" aria-label="Faça sua pergunta">
+                    <button class="btn btn-custom" type="button" id="btn-enviar-pergunta">
+                        <span id="btn-text">Enviar</span>
+                        <span id="btn-spinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+                
+                <div id="area-resposta" class="mt-4 p-4 rounded" style="display: none;">
+                    <h5 class="mb-3">Resposta da IA:</h5>
+                    <p id="texto-resposta-ia"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contatos">
+        <div class="container text-center">
+            <h2 class="display-5 mb-4">Entre em Contato</h2>
+            <p class="lead mb-5" style="color: #fff;">Sinta-se à vontade para se conectar comigo ou me enviar um email.</p>
+            <div>
+                <a href="https://www.linkedin.com/in/igor-luciano-9317061b2/" target="_blank" class="fs-1 mx-3 contact-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/igorxluciano/" target="_blank" class="fs-1 mx-3 contact-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" id="email-link" class="fs-1 mx-3 contact-icon"><i class="bi bi-envelope-fill"></i></a>
+                <a href="https://wa.me/5571983010652" target="_blank" class="fs-1 mx-3 contact-icon"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class=" mb-0" style="color: #fff;">© 2025 Igor Luciano. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <div id="copiado-toast" class="toast-notification">
+    Email copiado!
+</div>
+</body>
+</html>

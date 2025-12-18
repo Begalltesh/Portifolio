@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 
 :root {
   --cor-fundo-primaria: #12181b;
@@ -10,7 +8,6 @@
   --cor-texto-secundaria: #a0a0a0;
   --cor-branco: #ffffff;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -38,7 +35,6 @@ section {
   padding: 100px 0;
 }
 
-
 .navbar {
   transition: background-color 0.4s ease, padding 0.4s ease;
   padding: 1rem 0;
@@ -61,7 +57,6 @@ section {
   color: var(--cor-destaque) !important;
 }
 
-
 .navbar-scrolled {
   background-color: rgba(26, 32, 36, 0.85);
   backdrop-filter: blur(10px);
@@ -69,7 +64,6 @@ section {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 0.5rem 0;
 }
-
 
 #inicio {
   height: 100vh;
@@ -93,12 +87,9 @@ section {
   50% { opacity: 0; }
 }
 
-
 #projetos, #contatos {
   background-color: var(--cor-fundo-secundaria);
 }
-
-
 
 #carouselProjetos .carousel-item img {
   height: 55vh;
@@ -128,7 +119,6 @@ section {
     transition: color 0.3s ease;
 }
 
-
 .carousel-caption h5 a:hover {
     color: var(--cor-destaque); 
     text-decoration: underline;
@@ -142,8 +132,57 @@ section {
   margin: 0 8px !important;
 }
 
+/* --- NOVA SEÇÃO CLOUD & AWS --- */
+#cloud-focus {
+    background: linear-gradient(135deg, var(--cor-fundo-primaria) 0%, #1e262b 100%);
+    border-top: 1px solid rgba(255, 153, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 153, 0, 0.05);
+}
+
+/* Animação da Badge AWS */
+.aws-badge {
+    filter: drop-shadow(0 0 20px rgba(255, 153, 0, 0.2));
+    animation: floatBadge 4s ease-in-out infinite;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.aws-badge:hover {
+    filter: drop-shadow(0 0 30px rgba(255, 153, 0, 0.5));
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* --- CARREIRA & TIMELINE --- */
 #carreira {
     background-color: var(--cor-fundo-primaria); 
+}
+
+.timeline-item {
+    border-left: 3px solid var(--cor-destaque);
+    padding-left: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: var(--cor-fundo-primaria);
+    border: 3px solid var(--cor-destaque);
+    border-radius: 50%;
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    background-color: var(--cor-destaque);
 }
 
 .btn-custom {
@@ -164,7 +203,6 @@ section {
     color: var(--cor-branco);
 }
 
-
 #sobre-mim .rounded-circle {
   width: 280px;
   height: 280px;
@@ -184,7 +222,6 @@ section {
 #sobre-mim hr {
   border-color: rgba(0, 170, 255, 0.2);
 }
-
 
 #ia-pergunta {
     background-color: var(--cor-fundo-primaria);
@@ -234,7 +271,6 @@ section {
   transform: scale(1.2) translateY(-5px);
 }
 
-
 footer {
   background-color: var(--cor-fundo-primaria);
   padding: 1.5rem 0;
@@ -256,7 +292,6 @@ footer {
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   z-index: 1000;
 }
-
 
 .toast-notification.show {
   transform: translateX(-50%) translateY(0); 

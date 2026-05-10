@@ -323,6 +323,21 @@ footer {
 
 /* Para Celulares Padrão (max-width: 768px) */
 @media (max-width: 768px) {
+    #ia-pergunta .input-group {
+        flex-direction: column;
+        gap: 15px; /* Espaço entre o campo de texto e o botão */
+    }
+    
+    #ia-pergunta .input-group .form-control {
+        width: 100%;
+        border-radius: 8px !important; /* Arredonda os cantos do input */
+    }
+
+    #ia-pergunta .input-group .btn-custom {
+        width: 100%;
+        border-radius: 50px !important; /* Mantém o formato arredondado do seu botão */
+        margin: 0 !important;
+    }
     /* Reduz o padding das seções para otimizar o espaço na tela do celular */
     section {
         padding: 60px 0;

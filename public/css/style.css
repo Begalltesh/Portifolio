@@ -298,3 +298,104 @@ footer {
   opacity: 1; 
   visibility: visible;
 }
+/* =========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   Ajustes para Mobile e Tablets
+   ========================================= */
+
+/* Para Tablets e Telas Menores (max-width: 991px) */
+@media (max-width: 991px) {
+    /* Garante que o menu hambúrguer tenha fundo escuro quando aberto no topo da página */
+    .navbar-collapse {
+        background-color: var(--cor-fundo-secundaria);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Retira o fundo extra caso o menu já esteja "scrolado" */
+    .navbar-scrolled .navbar-collapse {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+/* Para Celulares Padrão (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Reduz o padding das seções para otimizar o espaço na tela do celular */
+    section {
+        padding: 60px 0;
+    }
+
+    /* Reduz o tamanho da fonte do título animado inicial */
+    #inicio h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Ajuste responsivo das fotos redondas na seção "Sobre Mim" */
+    #sobre-mim .rounded-circle {
+        width: 200px;
+        height: 200px;
+        border-width: 3px;
+    }
+
+    /* Impede que as imagens do carrossel fiquem muito altas em telas estreitas */
+    #carouselProjetos .carousel-item img {
+        height: 45vh;
+        min-height: 250px;
+    }
+
+    /* Reduz um pouco o selo da AWS */
+    .aws-badge {
+        max-height: 200px !important;
+    }
+
+    /* Ajuste no espaçamento da timeline da Carreira */
+    .timeline-item {
+        padding-left: 20px;
+    }
+
+    /* Aproxima os ícones de contato */
+    #contatos .fs-1 {
+        font-size: 2rem !important;
+        margin: 0 10px !important;
+    }
+}
+
+/* Para Celulares Pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Título inicial ainda menor para não quebrar a palavra */
+    #inicio h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Fotos do "Sobre Mim" proporcionais a telas bem pequenas */
+    #sobre-mim .rounded-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* Empilha os botões de currículo e ajusta o tamanho */
+    .btn-custom {
+        display: block;
+        width: 80%;
+        margin: 15px auto !important;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajusta a caixa de texto do carrossel para não cobrir a imagem toda */
+    .carousel-caption {
+        padding: 15px 10px 10px 10px;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+    }
+}

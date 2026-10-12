@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     
-    const texto = "Oi, eu sou Igor Luciano, Desenvolvedor Full-Stack, Estudante e Gamer.";
+    const texto = "Oi, eu sou Igor Luciano, Desenvolvedor/DevOps, Estudante e Gamer.";
     const elementoTexto = document.getElementById('texto-animado');
     let index = 0;
 

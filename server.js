@@ -21,7 +21,7 @@ app.post('/ask', async (req, res) => {
             return res.status(400).json({ error: 'Nenhuma pergunta foi fornecida.' });
         }
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
         const prompt = `
             Você é um assistente de IA focado exclusivamente no portfólio de Igor Luciano Pinheiro. Sua personalidade deve ser profissional, técnica, acessível e objetiva, visando atrair recrutadores e parceiros de projeto.

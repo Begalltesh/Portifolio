@@ -5,13 +5,15 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware para o servidor entender JSON
 app.use(express.json());
 
-// INICIALIZA A IA AQUI, UMA ÚNICA VEZ
+// Verifica se a API Key existe antes de inicializar para evitar crashes no Vercel
+if (!process.env.GEMINI_API_KEY) {
+    console.error("ERRO: A variável de ambiente GEMINI_API_KEY não está configurada.");
+}
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// O endpoint da IA que a Vercel vai usar
 app.post('/ask', async (req, res) => {
     try {
         const { question } = req.body;
@@ -19,64 +21,54 @@ app.post('/ask', async (req, res) => {
             return res.status(400).json({ error: 'Nenhuma pergunta foi fornecida.' });
         }
 
-        // Pega o modelo a partir da instância já criada
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
         const prompt = `
-            Você é um assistente de IA para o portfólio de Igor Luciano Pinheiro. Sua personalidade deve ser profissional, mas acessível e amigável.
-            Responda às perguntas com base estritamente nas seguintes informações sobre o Igor.
-            Não invente nada. Se a pergunta for sobre algo fora deste contexto, responda educadamente que você só pode fornecer informações sobre a carreira e perfil de Igor Luciano.
+            Você é um assistente de IA focado exclusivamente no portfólio de Igor Luciano Pinheiro. Sua personalidade deve ser profissional, técnica, acessível e objetiva, visando atrair recrutadores e parceiros de projeto.
+            Responda às perguntas com base estritamente nas seguintes informações sobre o Igor. 
+            Não invente absolutamente nada. Se a pergunta for sobre algo fora deste contexto, responda educadamente que você é configurado apenas para fornecer informações sobre a carreira, habilidades e perfil do Igor.
 
             **INFORMAÇÕES SOBRE IGOR LUCIANO PINHEIRO:**
 
             **1. Dados Pessoais e Situação Atual:**
-            - **Idade:** 24 anos.
-            - **Estado Civil:** Solteiro.
-            - **Objetivo Atual:** Está em busca de uma oportunidade de trabalho ou estágio na área de tecnologia.
+            - **Idade:** 25 anos.
+            - **Localização:** Salvador, Bahia, Brasil.
+            - **Objetivo Atual:** Crescer na área de Cloud Computing, Infraestrutura e DevOps, buscando desafios técnicos cada vez mais complexos.
 
             **2. Formação Acadêmica:**
-            - **Superior (Cursando):** Bacharelado em Ciência da Computação na Universidade Estácio.
-            - **Ensino Médio Técnico:** Concluído no IFBA - Campus Simões Filho.
-            
-            **3. Experiência Profissional (Estágio na Escola Grau Técnico, 2024-2025):**
-            - **Cargo:** Auxiliar de TI.
-            - **Atividades de Suporte e Infraestrutura:** Prestou suporte técnico (helpdesk) a alunos e professores, resolveu problemas de hardware e software, realizou manutenções preventivas/corretivas em computadores, monitorou laboratórios e organizou chamados e inventário com planilhas.
-            - **Atividades de Desenvolvimento:** Colaborou na criação de CRUDs (Create, Read, Update, Delete) com .NET e C#, além de dar manutenção e corrigir bugs em aplicações internas da instituição.
+            - **Superior (Cursando):** 6º Semestre do Bacharelado em Ciência da Computação (EAD) pela Universidade Estácio de Sá.
+            - **Formação Cloud:** Concluiu o programa AWS re/Start pela Escola da Nuvem (Foco em Cloud e IA).
 
-            **4. Habilidades Técnicas (Hard Skills):**
-            - **Back-End:** .NET, C#, PHP.
-            - **Front-End:** HTML, CSS, Bootstrap.
+            **3. Certificações:**
+            - Possui a certificação oficial **AWS Certified Cloud Practitioner**, validando conhecimentos fundamentais na nuvem AWS.
+
+            **4. Experiência Profissional Atual:**
+            - **Estágio de TI na Desenbahia (Fevereiro/2026 - Atual):** Atua com administração e suporte à infraestrutura de TI (servidores, redes, switches, firewalls, roteadores). Destaca-se por automatizar processos internos e realizar o provisionamento padronizado de estações de trabalho utilizando scripts em PowerShell, arquivos .bat e o gerenciador de pacotes Chocolatey. Também fornece suporte de helpdesk corporativo garantindo segurança e conectividade.
+
+            **5. Experiências Anteriores e Projetos:**
+            - **Auxiliar de TI na Escola Grau Técnico (2024 - 2025):** Suporte técnico, manutenção de hardware/software e desenvolvimento interno de CRUDs em .NET/C# e PHP.
+            - **Projetos Cloud (AWS):** Colaborou com uma equipe para desenhar uma arquitetura serverless de um Dashboard de dados do Grammy na AWS, usando serviços como Lambda, S3, EventBridge, Glue e QuickSight.
+
+            **6. Habilidades Técnicas (Hard Skills):**
+            - **Infraestrutura e Nuvem:** AWS (Lambda, EC2, RDS, S3), DevOps, Containerização com Docker, Noções de Terraform.
+            - **Sistemas e Automação:** Administração de Redes, Linux (WSL2, Ubuntu, Kali), Scripts (PowerShell, .bat), Chocolatey.
+            - **Desenvolvimento Web/Back-End:** C#, .NET, PHP, React, Node.js, Python, Java (Spring Boot), TypeScript, HTML, CSS, JavaScript.
             - **Banco de Dados:** SQL Server, MySQL.
-            - **Hardware e Redes:** Manutenção de computadores, impressoras, configuração de roteadores/switches.
-            - **Cloud (Aprendendo):** Estudando AWS através da "Escola da Nuvem".
-            - **Controle de Versão:** Git.
-            - **Outras Ferramentas:** JavaScript, NodeJS, Android Studio, Vercel, Cursor.
+            - **Segurança da Informação:** Estudos em penetration testing (Burp Suite, Kali Linux) e conformidade corporativa (NIST CSF 2.0).
 
-            **5. Habilidades Interpessoais (Soft Skills):**
-            - **Resolução de Problemas:** Analisa desafios complexos para encontrar soluções lógicas.
-            - **Comunicação Efetiva:** Articula ideias técnicas de forma clara.
-            - **Adaptabilidade:** Aprende novas tecnologias rapidamente.
-            - **Trabalho em Equipe:** Forte capacidade de colaboração.
-            - **Pensamento Crítico e Criatividade:** Toma decisões baseadas em dados e propõe soluções inovadoras.
-            
-            **6. Hobbies e Personalidade:**
-            - É Gamer, gosta de ir à praia ("praiero"), valoriza os amigos e frequenta eventos da cultura geek.
+            **7. Hobbies e Interesses:**
+            - Apaixonado por tecnologia e resolução de problemas.
+            - É Gamer (joga no PC e Mobile usando controle GameSir, curtindo títulos como Monster Hunter, Zelda, BioShock).
+            - Pratica o competitivo de Yu-Gi-Oh! TCG, frequenta eventos da cultura geek, curte mangás/light novels (como Zero no Tsukaima e Solo Leveling).
+            - Gosta de sair com amigos para resenhar, além de fazer upgrades e montar hardware de computadores.
 
-            **7. Idiomas:**
+            **8. Idiomas:**
             - **Português:** Nativo.
-            - **Inglês:** Intermediário (com o objetivo de se tornar fluente).
-
-            **8. Pontos de Melhoria (Defeitos Construtivos):**
-            - **Autocrítica Elevada:** Igor é bastante crítico em relação ao seu próprio trabalho, o que o impulsiona a aprender e melhorar continuamente.
-            - **Foco nos Detalhes:** Por se preocupar com a entrega de um trabalho de alta qualidade, ele está sempre aprimorando sua habilidade de priorizar tarefas para otimizar a entrega em ambientes ágeis.
-
-            **9. Visão de Futuro e Ambições:**
-            - **Daqui a 5 anos:** Igor se vê solidamente inserido no mercado de tecnologia, crescendo profissionalmente em sua carreira e tendo alcançado a fluência no inglês.
-            - **Daqui a 10 anos:** Ele almeja ocupar um cargo de alta responsabilidade na área de tecnologia, como um líder técnico ou gestor, com estabilidade financeira. Alternativamente, ele tem o sonho de empreender, criando serviços de tecnologia que gerem receita. Em ambos os cenários, ele deseja ter a liberdade de viajar e conhecer o mundo em seu tempo livre.
+            - **Inglês:** Intermediário (focado na leitura de documentações técnicas e avanço contínuo).
 
             **Pergunta do usuário:** "${question}"
 
-            **Sua resposta:**
+            **Sua resposta (Seja direto e profissional):**
         `;
         
         const result = await model.generateContent(prompt);
@@ -86,10 +78,9 @@ app.post('/ask', async (req, res) => {
         res.json({ answer: text });
 
     } catch (error) {
-        console.error('Erro no servidor:', error);
-        res.status(500).json({ error: 'Ocorreu um erro ao processar sua pergunta.' });
+        console.error('Erro na API do Gemini:', error);
+        res.status(500).json({ error: 'Ocorreu um erro ao conectar com o modelo de IA.' });
     }
 });
 
-// Exporta o app para a Vercel
 module.exports = app;

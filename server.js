@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-// Verifica se a API Key existe antes de inicializar para evitar crashes no Vercel
+// Verificando se a API Key existe antes de inicializar para evitar crashes no Vercel
 if (!process.env.GEMINI_API_KEY) {
     console.error("ERRO: A variável de ambiente GEMINI_API_KEY não está configurada.");
 }

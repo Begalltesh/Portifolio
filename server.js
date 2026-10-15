@@ -43,7 +43,7 @@ app.post('/ask', async (req, res) => {
               1. Um Dashboard na AWS para dados históricos do Grammy (arquitetura Serverless com S3, EventBridge, Lambda, Glue, Athena e QuickSight).
               2. Um sistema CRUD completo para gestão de bibliotecas desenvolvido em PHP e MySQL.
               3. Este próprio portfólio web integrado à API do Google Gemini.
-            - Stack de Desenvolvimento: C#, .NET, Java (Spring Boot), PHP, Python, React, Node.js e bancos de dados relacionais (SQL/MySQL).
+            - Stack de Desenvolvimento: Java (Spring Boot), PHP, Python, React, Node.js e bancos de dados relacionais (SQL/MySQL).
             - Sistemas: Usuário avançado de Linux (Ubuntu via WSL2, Kali Linux, Zorin OS). Experiência com ferramentas de cibersegurança e pentest (Burp Suite).
             - Hobbies e Interesses: Montagem e manutenção de hardware (setups com Intel Xeon), desenvolvimento de jogos 2D e pixel art (Godot, Aseprite), jogos (Monster Hunter, Overwatch 2, Yakuza), jogar o TCG competitivo de Yu-Gi-Oh! e ler mangás/manhwas (como Omniscient Reader's Viewpoint e Grand Blue).
 

@@ -414,3 +414,35 @@ footer {
         margin-bottom: 0;
     }
 }
+
+    /* ... existing code ... */
+    .carousel-caption p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    }
+    }
+
+    /* ==========================================
+    ESTILOS DA SEÇÃO INÍCIO (FÍSICA E BOLAS)
+    ========================================== /
+    #inicio {
+    position: relative;
+    overflow: hidden;
+    / Mantém o seu background original intacto */
+    }
+
+    #canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    }
+
+    /* Garante que o texto fique acima das bolas e permita clicar através dele */
+    .texto-hero-container {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+    }

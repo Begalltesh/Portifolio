@@ -423,3 +423,22 @@ font-size: 1.6rem;
 
 
 }
+
+/* Regras aplicadas apenas para telas de celular (até 768px de largura) */
+@media (max-width: 768px) {
+    
+    /* 1. Libera o scroll da página */
+    .sua-classe-do-carrossel {
+        /* Garante que o navegador permita rolar a tela verticalmente (para cima e para baixo) ao tocar aqui */
+        touch-action: pan-y !important; 
+    }
+
+    /* 2. Remove a interação com as bolas e diminui o tamanho */
+    .sua-classe-das-bolas {
+        /* Desativa qualquer clique ou arraste em cima da bola no celular */
+        pointer-events: none !important; 
+        
+        /* Reduz o tamanho da bola em 20%. (Se achar muito pequeno, mude para 0.9 para diminuir só 10%) */
+        transform: scale(0.8) !important; 
+    }
+}

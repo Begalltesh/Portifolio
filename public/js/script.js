@@ -119,20 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); 
 
-// ... existing code ...
-                setTimeout(() => {
-                    copiadoToast.classList.remove('show');
-                    copiadoToast.style.backgroundColor = ''; 
-                }, 3000);
-            });
-        });
-    }
-
-}); 
-
 // ==========================================
 // ANIMAÇÃO DAS BOLAS COM MATTER.JS (Fundo Início)
-// Adicionado fora do DOMContentLoaded para rodar após o carregamento completo
 // ==========================================
 window.addEventListener('load', function() {
     const container = document.getElementById('canvas-container');
@@ -181,6 +169,7 @@ window.addEventListener('load', function() {
 
     World.add(world, [ground, leftWall, rightWall]);
 
+    // Lista de tecnologias com a AWS em branco (%23ffffff)
     const techLogos = [
         'https://api.iconify.design/cib:amazon-aws.svg?color=%23ffffff',
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
@@ -194,7 +183,7 @@ window.addEventListener('load', function() {
     ];
 
     const bolas = [];
-    const raioBola = 80;
+    const raioBola = 80; // Bolas grandes e imponentes
 
     const imageCache = {};
     techLogos.forEach(logo => {
@@ -214,7 +203,7 @@ window.addEventListener('load', function() {
             density: 0.05,
             logoUrl: logo,
             render: {
-                fillStyle: '#1a2024', // Cor adaptada pro seu CSS
+                fillStyle: '#1a2024', // Cor de fundo das bolas compatível com o CSS
                 strokeStyle: '#2a343b', 
                 lineWidth: 2
             }
@@ -264,7 +253,6 @@ window.addEventListener('load', function() {
         });
 
         const grad = ctx.createLinearGradient(0, floorY, 0, height);
-        // Usando as cores do seu CSS (--cor-fundo-primaria: #12181b)
         grad.addColorStop(0, 'rgba(18, 24, 27, 0.4)');
         grad.addColorStop(1, 'rgba(18, 24, 27, 1)');
         

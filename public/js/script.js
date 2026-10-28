@@ -171,7 +171,7 @@ window.addEventListener('load', function() {
 
     // Lista de tecnologias com a AWS em branco (%23ffffff)
     const techLogos = [
-        'https://api.iconify.design/cib:amazon-aws.svg?color=%23ffffff',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg',
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
